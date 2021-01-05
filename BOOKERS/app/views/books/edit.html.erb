@@ -1,0 +1,20 @@
+<h2>Editing Book</h2>
+
+<% if flash[:notice] %>
+ <div class="flash">
+  <%= flash[:notice] %>
+ </div>
+<% end %>
+
+<%= form_with model:@book, local: true do |f| %>
+<p>Title</p>
+<%= f.text_field :title %>
+<p>Body</p>
+<%= f.text_area :body %>
+
+<br><%= f.submit 'Update Book' %></br>
+<% end %>
+
+<span>
+<%= link_to "Show", book_path %> | <%= link_to "Back", books_path %>
+</span>
